@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  web:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ..:/app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/app
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: change-me
+      NEXT_PUBLIC_APP_NAME: ProductName
+      NEXT_PUBLIC_WOLFE_LABS_NAME: Wolfe Labs
+      NEXT_PUBLIC_WOLFE_LABS_URL: https://rwolfe.io
+      # PostHog: self-host default disabled unless configured
+      POSTHOG_ENABLED: "false"
+      POSTHOG_UPSTREAM_HOST: "https://app.posthog.com"
+      NEXT_PUBLIC_POSTHOG_ENABLED: "false"
+      NEXT_PUBLIC_POSTHOG_KEY: ""
+      NEXT_PUBLIC_POSTHOG_HOST: "https://app.posthog.com"
+      NEXT_PUBLIC_POSTHOG_API_HOST: "/api/posthog"
+    command: sh -c "corepack enable && pnpm -C apps/web install && pnpm -C apps/web dev"
+    depends_on:
+      - db
+
+volumes:
+  db_data:

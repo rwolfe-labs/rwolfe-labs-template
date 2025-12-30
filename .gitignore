@@ -1,0 +1,30 @@
+# Node
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.*.local
+
+# Next
+.next/
+out/
+.vercel/
+
+# Astro
+dist/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Astro build output
+.astro/

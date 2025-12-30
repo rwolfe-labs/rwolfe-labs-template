@@ -1,0 +1,4 @@
+packages:
+  - "apps/*"
+  - "../rwolfe-labs-ui"
+  - "../rwolfe-labs-core"

@@ -1,0 +1,14 @@
+{
+  "name": "rwolfe-labs-template",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm -C apps/web dev",
+    "dev:docs": "pnpm -C apps/docs dev",
+    "dev:all": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "format": "pnpm -r format"
+  }
+}
