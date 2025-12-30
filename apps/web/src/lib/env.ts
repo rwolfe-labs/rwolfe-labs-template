@@ -3,7 +3,7 @@ import { z } from "zod";
 const publicSchema = z.object({
   NEXT_PUBLIC_APP_NAME: z.string().min(1).default("ProductName"),
   NEXT_PUBLIC_WOLFE_LABS_NAME: z.string().min(1).default("Wolfe Labs"),
-  NEXT_PUBLIC_WOLFE_LABS_URL: z.string().url().default("https://rwolfe.io"),
+  NEXT_PUBLIC_WOLFE_LABS_URL: z.string().url().default("https://labs.rwolfe.io"),
   NEXT_PUBLIC_POSTHOG_ENABLED: z.enum(["true", "false"]).default("false"),
   NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
   NEXT_PUBLIC_POSTHOG_HOST: z.string().url().default("https://app.posthog.com"),

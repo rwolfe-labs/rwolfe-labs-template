@@ -23,7 +23,7 @@ services:
       NEXTAUTH_SECRET: change-me
       NEXT_PUBLIC_APP_NAME: ProductName
       NEXT_PUBLIC_WOLFE_LABS_NAME: Wolfe Labs
-      NEXT_PUBLIC_WOLFE_LABS_URL: https://rwolfe.io
+      NEXT_PUBLIC_WOLFE_LABS_URL: https://labs.rwolfe.io
       # PostHog: self-host default disabled unless configured
       POSTHOG_ENABLED: "false"
       POSTHOG_UPSTREAM_HOST: "https://app.posthog.com"
