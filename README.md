@@ -43,7 +43,3 @@ pnpm dev
 ## Self-host (Docker Compose)
 
 See docs: `apps/docs/src/content/docs/self-hosting.mdx`
-
-## License
-
-AGPL-3.0-or-later (replace LICENSE placeholder with full text before publishing).
